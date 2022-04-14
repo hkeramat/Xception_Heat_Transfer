@@ -1,40 +1,24 @@
-# Import stuff
 import sys
 import math
-import keras
-import tensorflow as tf
-
-# Additional imports from keras
-from keras           import optimizers
-from keras.models    import Model
-from keras.layers    import Input
-from keras.layers    import Conv2D
-from keras.layers    import MaxPooling2D
-from keras.layers    import Flatten
-from keras.layers    import Dense
-from keras.layers    import Activation
-from keras.callbacks import EarlyStopping
-from keras.callbacks import ModelCheckpoint
-from keras.callbacks import LearningRateScheduler
-
-# Custom imports
-from dataset         import *
-###############################################
 import tensorflow as tf
 import tensorflow.keras
-
+from tensorflow.keras import optimizers
+from tensorflow.keras.optimizers import SGD, RMSprop
 from tensorflow.keras import models, layers
 from tensorflow.keras.models import Model, model_from_json, Sequential
-
 from tensorflow.keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
 from tensorflow.keras.callbacks import TensorBoard
 from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D, SeparableConv2D, UpSampling2D, BatchNormalization, Input, GlobalAveragePooling2D
 
 from tensorflow.keras.regularizers import l2
-from tensorflow.keras.optimizers import SGD, RMSprop
+
 from tensorflow.keras.utils import to_categorical
 from keras.utils.vis_utils import plot_model
+from keras.callbacks import EarlyStopping
+from keras.callbacks import ModelCheckpoint
+from keras.callbacks import LearningRateScheduler
 ############################################
+from dataset         import *
 ### ************************************************
 def entry_flow(inputs) :
 
@@ -136,7 +120,7 @@ def Exception(train_im,
         batch_size,
         n_epochs):
 
-    # Define VGG16 parameters
+    # Define parameters
     nb_fltrs  = 32
     conv_knl  = 3
     pool_knl  = 2
